@@ -7,14 +7,12 @@
 
 import SwiftUI
 
-struct UniversalRouter: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct UniversalRouter_Previews: PreviewProvider {
-    static var previews: some View {
-        UniversalRouter()
+class UniversalRouter: ObservableObject {
+    @Published var startRouting: Bool = false
+    
+    var scene: AnyView? {
+        didSet {
+            startRouting = scene != nil
+        }
     }
 }

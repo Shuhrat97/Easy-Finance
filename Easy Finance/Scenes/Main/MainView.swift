@@ -10,10 +10,13 @@ import SwiftUI
 struct MainView: View {
     private let screenWidth = UIScreen.main.bounds.width - 32
     @State var progress:Double = 0.5
+    @StateObject var router = UniversalRouter()
     
     var body: some View {
         NavigationView {
             ZStack {
+                NavigationLink("", destination: router.scene, isActive: $router.startRouting)
+                
                 LinearGradient(
                     stops: [
                         Gradient.Stop(color: Color(red: 0.03, green: 0.12, blue: 0.35), location: 0.00),
@@ -22,211 +25,219 @@ struct MainView: View {
                     startPoint: UnitPoint(x: 0.5, y: 0),
                     endPoint: UnitPoint(x: 0.5, y: 1)
                 )
+                .edgesIgnoringSafeArea(.top)
+                
+                VStack(spacing: 0) {
+                    Rectangle()
+                        .fill(Color.clear)
+
+                    Spacer()
+
+                    Rectangle()
+                        .fill(Color.white)
+                        .cornerRadius(20, corners: [.topLeft, .topRight])
+                }
                 .edgesIgnoringSafeArea(.all)
                 
-                ScrollView {
+                VStack {
                     HStack {
                         VStack(alignment: .leading) {
-                            Text("Umumiy qarz")
-                            
+                            Text("Hayrli kun!")
                                 .font(Font.custom("Montserrat", size: 14))
-                                .foregroundColor(.white.opacity(0.75))
-                            
-                            Text("1 200 000.00")
-                                .font(
-                                    Font.custom("Montserrat", size: 45)
-                                        .weight(.bold)
-                                )
-                                .lineLimit(1)
-                                .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
-                                .minimumScaleFactor(0.5)
+                            
+                            Text("Abdullaev A. A.")
+                                .font(Font.custom("Montserrat-Bold", size: 20))
+                                .foregroundColor(.white)
                         }
-                        .padding()
-                        
                         Spacer()
+                        Button(action: {
+                            router.scene = AnyView(NotificationsView())
+                        }, label: {
+                            Image("Notification")
+                        })
                     }
-                    
-                    VStack(alignment: .leading) {
-                        ZStack(alignment: .leading) {
-                            Rectangle()
-                                .foregroundColor(Color(red: 0.98, green: 0.65, blue: 0.16))
-                                .frame(width: (UIScreen.main.bounds.width - 32)*progress)
-                                .frame(height: 10)
-                            
-                                .cornerRadius(7)
-                            
-                            Rectangle()
-                                .foregroundColor(Color.white.opacity(0.3))
-                                .frame(width: (UIScreen.main.bounds.width - 32))
-                                .frame(height: 10)
-                                .cornerRadius(7)
-                        }
-                        Text("To'lovlarning ohirgi sanasi: 05.07.2023")
-                          .font(Font.custom("Montserrat", size: 14))
-                          .foregroundColor(Color.white.opacity(0.75))
-                    }
-                    
-                    HStack {
-                        Button {
-                            print("Kreditni to'lash")
-                        } label: {
-                            HStack {
-                                Image("sendIcon")
-                                    .resizable()
-                                    .frame(width: 46, height: 46)
-                                Text("Kreditni to'lash")
-                                    .foregroundColor(.black)
-                                    .font(Font.custom("Montserrat", size: 16))
-                            }
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 60)
-                            .cornerRadius(30)
-                            .padding(.trailing, 14)
-                        }
-                        
-                        Button {
-                            print("Pul olish")
-                        } label: {
-                            HStack {
-                                Image("getIcon")
-                                    .resizable()
-                                    .frame(width: 46, height: 46)
-                                Text("Pul olish")
-                                    .foregroundColor(.black)
-                                    .font(Font.custom("Montserrat", size: 16))
-                            }
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 60)
-                            .cornerRadius(30)
-                            .padding(.trailing, 14)
-                        }
-                        
-                    }
-                    .padding()
-                    .background(
-                        Image("Union")
-                    )
-                    
-                    VStack {
+                    .padding(.horizontal)
+                    ScrollView {
                         HStack {
-                            Text("Faqat Siz uchun")
-                                .font(
-                                    Font.custom("Montserrat", size: 14)
-                                        .weight(.semibold)
-                                )
-                                .foregroundColor(Color(red: 0.03, green: 0.12, blue: 0.35).opacity(0.7))
+                            VStack(alignment: .leading) {
+                                Text("Umumiy qarz")
+                                
+                                    .font(Font.custom("Montserrat", size: 14))
+                                    .foregroundColor(.white.opacity(0.75))
+                                
+                                Text("1 200 000.00")
+                                    .font(
+                                        Font.custom("Montserrat", size: 45)
+                                            .weight(.bold)
+                                    )
+                                    .lineLimit(1)
+                                    .multilineTextAlignment(.center)
+                                    .foregroundColor(.white)
+                                    .minimumScaleFactor(0.5)
+                            }
+                            .padding()
+                            
                             Spacer()
                         }
-                        .padding()
                         
-                        HStack {
-                            Button {
-                                //
-                            } label: {
-                                VStack {
-                                    Image("applicationsIcon")
-                                    Text("Arizalar")
-                                      .font(
-                                        Font.custom("Montserrat", size: 12)
-                                          .weight(.semibold)
-                                      )
-                                      .multilineTextAlignment(.center)
-                                      .foregroundColor(Color(red: 0.03, green: 0.12, blue: 0.35).opacity(0.3))
-                                }
+                        VStack(alignment: .leading) {
+                            ZStack(alignment: .leading) {
+                                Rectangle()
+                                    .foregroundColor(Color(red: 0.98, green: 0.65, blue: 0.16))
+                                    .frame(width: (UIScreen.main.bounds.width - 32)*progress)
+                                    .frame(height: 10)
+                                
+                                    .cornerRadius(7)
+                                
+                                Rectangle()
+                                    .foregroundColor(Color.white.opacity(0.3))
+                                    .frame(width: (UIScreen.main.bounds.width - 32))
+                                    .frame(height: 10)
+                                    .cornerRadius(7)
                             }
-
-                            Button {
-                                //
-                            } label: {
-                                VStack {
-                                    Image("paymentsIcon")
-                                    Text("To'lovlar")
-                                      .font(
-                                        Font.custom("Montserrat", size: 12)
-                                          .weight(.semibold)
-                                      )
-                                      .multilineTextAlignment(.center)
-                                      .foregroundColor(Color(red: 0.03, green: 0.12, blue: 0.35).opacity(0.3))
-                                }
-                            }
-                            
-                            Button {
-                                //
-                            } label: {
-                                VStack {
-                                    Image("conditionsIcon")
-                                    Text("Shartlar")
-                                      .font(
-                                        Font.custom("Montserrat", size: 12)
-                                          .weight(.semibold)
-                                      )
-                                      .multilineTextAlignment(.center)
-                                      .foregroundColor(Color(red: 0.03, green: 0.12, blue: 0.35).opacity(0.3))
-                                }
-                            }
-                            
-                            Button {
-                                //
-                            } label: {
-                                VStack {
-                                    Image("settingsIcon")
-                                    Text("Sozlamalar")
-                                      .font(
-                                        Font.custom("Montserrat", size: 12)
-                                          .weight(.semibold)
-                                      )
-                                      .multilineTextAlignment(.center)
-                                      .foregroundColor(Color(red: 0.03, green: 0.12, blue: 0.35).opacity(0.3))
-                                }
-                            }
+                            Text("To'lovlarning ohirgi sanasi: 05.07.2023")
+                                .font(Font.custom("Montserrat", size: 14))
+                                .foregroundColor(Color.white.opacity(0.75))
                         }
                         
                         HStack {
-                            Text("Kredit tafsilotlari")
-                                .font(
-                                    Font.custom("Montserrat", size: 14)
-                                        .weight(.semibold)
-                                )
-                                .foregroundColor(Color(red: 0.03, green: 0.12, blue: 0.35).opacity(0.7))
-                            Spacer()
+                            Button {
+                                print("Kreditni to'lash")
+                            } label: {
+                                HStack {
+                                    Image("sendIcon")
+                                        .resizable()
+                                        .frame(width: 46, height: 46)
+                                    Text("Kreditni to'lash")
+                                        .foregroundColor(.black)
+                                        .font(Font.custom("Montserrat", size: 16))
+                                }
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 60)
+                                .cornerRadius(30)
+                                .padding(.trailing, 14)
+                            }
+                            
+                            Button {
+                                print("Pul olish")
+                            } label: {
+                                HStack {
+                                    Image("getIcon")
+                                        .resizable()
+                                        .frame(width: 46, height: 46)
+                                    Text("Pul olish")
+                                        .foregroundColor(.black)
+                                        .font(Font.custom("Montserrat", size: 16))
+                                }
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 60)
+                                .cornerRadius(30)
+                                .padding(.trailing, 14)
+                            }
+                            
                         }
                         .padding()
+                        .background(
+                            Image("Union")
+                        )
                         
-                        DetailsItemView(type: .custom, text: "1 000 000")
-                        
-                        DetailsItemView(type: .credit, text: "2 000 000")
-
+                        VStack {
+                            HStack {
+                                Text("Faqat Siz uchun")
+                                    .font(
+                                        Font.custom("Montserrat", size: 14)
+                                            .weight(.semibold)
+                                    )
+                                    .foregroundColor(Color(red: 0.03, green: 0.12, blue: 0.35).opacity(0.7))
+                                Spacer()
+                            }
+                            .padding()
+                            
+                            HStack {
+                                Button {
+                                    //
+                                } label: {
+                                    VStack {
+                                        Image("applicationsIcon")
+                                        Text("Arizalar")
+                                            .font(
+                                                Font.custom("Montserrat", size: 12)
+                                                    .weight(.semibold)
+                                            )
+                                            .multilineTextAlignment(.center)
+                                            .foregroundColor(Color(red: 0.03, green: 0.12, blue: 0.35).opacity(0.3))
+                                    }
+                                }
+                                
+                                Button {
+                                    //
+                                } label: {
+                                    VStack {
+                                        Image("paymentsIcon")
+                                        Text("To'lovlar")
+                                            .font(
+                                                Font.custom("Montserrat", size: 12)
+                                                    .weight(.semibold)
+                                            )
+                                            .multilineTextAlignment(.center)
+                                            .foregroundColor(Color(red: 0.03, green: 0.12, blue: 0.35).opacity(0.3))
+                                    }
+                                }
+                                
+                                Button {
+                                    //
+                                } label: {
+                                    VStack {
+                                        Image("conditionsIcon")
+                                        Text("Shartlar")
+                                            .font(
+                                                Font.custom("Montserrat", size: 12)
+                                                    .weight(.semibold)
+                                            )
+                                            .multilineTextAlignment(.center)
+                                            .foregroundColor(Color(red: 0.03, green: 0.12, blue: 0.35).opacity(0.3))
+                                    }
+                                }
+                                
+                                Button {
+                                    //
+                                } label: {
+                                    VStack {
+                                        Image("settingsIcon")
+                                        Text("Sozlamalar")
+                                            .font(
+                                                Font.custom("Montserrat", size: 12)
+                                                    .weight(.semibold)
+                                            )
+                                            .multilineTextAlignment(.center)
+                                            .foregroundColor(Color(red: 0.03, green: 0.12, blue: 0.35).opacity(0.3))
+                                    }
+                                }
+                            }
+                            
+                            HStack {
+                                Text("Kredit tafsilotlari")
+                                    .font(
+                                        Font.custom("Montserrat", size: 14)
+                                            .weight(.semibold)
+                                    )
+                                    .foregroundColor(Color(red: 0.03, green: 0.12, blue: 0.35).opacity(0.7))
+                                Spacer()
+                            }
+                            .padding()
+                            
+                            DetailsItemView(type: .custom, text: "1 000 000")
+                            
+                            DetailsItemView(type: .credit, text: "2 000 000")
+                        }
+                        .padding(.vertical)
+                        .background(Color.white)
+                        .cornerRadius(20, corners: [.topLeft, .topRight])
                     }
-                    .padding(.vertical)
-                    .background(Color.white)
-                    .cornerRadius(20, corners: [.topLeft, .topRight])
-                    
                 }
             }
-            .navigationBarItems(
-                leading: VStack(alignment: .leading) {
-                    Text("Hayrli kun!")
-                        .font(Font.custom("Montserrat", size: 14))
-                        .foregroundColor(.white)
-                    
-                    Text("Abdullaev A. A.")
-                        .font(Font.custom("Montserrat-Bold", size: 20))
-                        .foregroundColor(.white)
-                },
-                trailing: Button(action: {
-                    //
-                }, label: {
-                    Image("Notification")
-                })
-            )
-        }
-        .onAppear {
-          if #available(iOS 15.0, *) {
-              let tabBarAppearance = UITabBarAppearance()
-              tabBarAppearance.configureWithOpaqueBackground()
-              UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
-          }
+            .navigationBarHidden(true)
         }
     }
 }

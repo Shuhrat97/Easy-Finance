@@ -11,6 +11,14 @@
 		8D3DE4FF2A484DF7009147D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3DE4FE2A484DF7009147D5 /* ContentView.swift */; };
 		8D3DE5012A484DF9009147D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D3DE5002A484DF9009147D5 /* Assets.xcassets */; };
 		8D3DE5042A484DF9009147D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D3DE5032A484DF9009147D5 /* Preview Assets.xcassets */; };
+		8D3DE50B2A484E63009147D5 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D3DE50A2A484E63009147D5 /* Launch Screen.storyboard */; };
+		8D3DE50E2A485C37009147D5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3DE50D2A485C37009147D5 /* MainView.swift */; };
+		8D3DE5132A4870F1009147D5 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D3DE5102A4870F0009147D5 /* Montserrat-Bold.ttf */; };
+		8D3DE5142A4870F1009147D5 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D3DE5112A4870F0009147D5 /* Montserrat-Regular.ttf */; };
+		8D3DE5152A4870F1009147D5 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D3DE5122A4870F1009147D5 /* Montserrat-SemiBold.ttf */; };
+		8D3DE5192A4899BE009147D5 /* Extensions+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3DE5182A4899BE009147D5 /* Extensions+View.swift */; };
+		8D3DE51D2A489D18009147D5 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3DE51C2A489D18009147D5 /* NotificationsView.swift */; };
+		8D3DE51F2A489E36009147D5 /* UniversalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3DE51E2A489E36009147D5 /* UniversalRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +27,15 @@
 		8D3DE4FE2A484DF7009147D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8D3DE5002A484DF9009147D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D3DE5032A484DF9009147D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8D3DE50A2A484E63009147D5 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		8D3DE50D2A485C37009147D5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		8D3DE5102A4870F0009147D5 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		8D3DE5112A4870F0009147D5 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		8D3DE5122A4870F1009147D5 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		8D3DE5162A4872F8009147D5 /* Easy-Finance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Easy-Finance-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8D3DE5182A4899BE009147D5 /* Extensions+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+View.swift"; sourceTree = "<group>"; };
+		8D3DE51C2A489D18009147D5 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		8D3DE51E2A489E36009147D5 /* UniversalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +68,15 @@
 		8D3DE4FB2A484DF7009147D5 /* Easy Finance */ = {
 			isa = PBXGroup;
 			children = (
+				8D3DE51A2A489CEC009147D5 /* Scenes */,
+				8D3DE5172A4899A4009147D5 /* Extensions */,
+				8D3DE5162A4872F8009147D5 /* Easy-Finance-Info.plist */,
+				8D3DE50F2A4870A4009147D5 /* Fonts */,
 				8D3DE4FC2A484DF7009147D5 /* Easy_FinanceApp.swift */,
 				8D3DE4FE2A484DF7009147D5 /* ContentView.swift */,
 				8D3DE5002A484DF9009147D5 /* Assets.xcassets */,
 				8D3DE5022A484DF9009147D5 /* Preview Content */,
+				8D3DE50A2A484E63009147D5 /* Launch Screen.storyboard */,
 			);
 			path = "Easy Finance";
 			sourceTree = "<group>";
@@ -65,6 +87,50 @@
 				8D3DE5032A484DF9009147D5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8D3DE50C2A485C28009147D5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8D3DE50D2A485C37009147D5 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8D3DE50F2A4870A4009147D5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8D3DE5102A4870F0009147D5 /* Montserrat-Bold.ttf */,
+				8D3DE5112A4870F0009147D5 /* Montserrat-Regular.ttf */,
+				8D3DE5122A4870F1009147D5 /* Montserrat-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8D3DE5172A4899A4009147D5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8D3DE5182A4899BE009147D5 /* Extensions+View.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8D3DE51A2A489CEC009147D5 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8D3DE51B2A489CFF009147D5 /* Notifications */,
+				8D3DE50C2A485C28009147D5 /* Main */,
+				8D3DE51E2A489E36009147D5 /* UniversalRouter.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		8D3DE51B2A489CFF009147D5 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				8D3DE51C2A489D18009147D5 /* NotificationsView.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +191,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D3DE5152A4870F1009147D5 /* Montserrat-SemiBold.ttf in Resources */,
+				8D3DE5132A4870F1009147D5 /* Montserrat-Bold.ttf in Resources */,
+				8D3DE50B2A484E63009147D5 /* Launch Screen.storyboard in Resources */,
 				8D3DE5042A484DF9009147D5 /* Preview Assets.xcassets in Resources */,
+				8D3DE5142A4870F1009147D5 /* Montserrat-Regular.ttf in Resources */,
 				8D3DE5012A484DF9009147D5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +207,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D3DE51F2A489E36009147D5 /* UniversalRouter.swift in Sources */,
 				8D3DE4FF2A484DF7009147D5 /* ContentView.swift in Sources */,
+				8D3DE51D2A489D18009147D5 /* NotificationsView.swift in Sources */,
+				8D3DE50E2A485C37009147D5 /* MainView.swift in Sources */,
+				8D3DE5192A4899BE009147D5 /* Extensions+View.swift in Sources */,
 				8D3DE4FD2A484DF7009147D5 /* Easy_FinanceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,7 +269,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -249,7 +323,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -270,11 +344,14 @@
 				DEVELOPMENT_TEAM = BSQ35BFH5G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Easy-Finance-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,11 +376,14 @@
 				DEVELOPMENT_TEAM = BSQ35BFH5G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Easy-Finance-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
